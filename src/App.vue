@@ -1,31 +1,30 @@
-<script>
-  export default{
-    data(){
-      return{
-        number1: null,
-        number2: null,
-        totalResult: null,
-      }
-    },
-    methods:{
-      collection(){
-        const collect = +this.number1 + +this.number2;
-        this.totalResult = collect;
-      },
-      division(){
-        const divis = this.number1 / this.number2;
-        this.totalResult = divis;
-      },
-      extraction(){
-        const extra = this.number1 - this.number2;
-        this.totalResult = extra;
-      },
-      multiplication(){
-        const multi = this.number1 * this.number2;
-        this.totalResult = multi;
-      }
-    }
-  }
+<script setup>
+import { ref, computed, reactive } from 'vue';
+
+const number1 = ref(0);
+const number2 = ref(0);
+const totalResult = ref(0);
+
+const collection = () =>{
+  const sonuc = Number(number1.value) + Number(number2.value);
+  return totalResult.value = sonuc;
+}
+
+const extraction = () =>{
+  const sonuc = number1.value - number2.value;
+  return totalResult.value = sonuc;
+}
+
+const division = () =>{
+  const sonuc = number1.value / number2.value;
+  return totalResult.value = sonuc;
+}
+
+const multiplication = () =>{
+  const sonuc = number1.value * number2.value;
+  return totalResult.value = sonuc;
+}
+
 </script>
 
 <template>
